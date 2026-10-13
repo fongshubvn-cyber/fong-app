@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fong Auto Uploader</title>
+<style>body{font-family:system-ui,sans-serif;max-width:680px;margin:40px auto;padding:0 16px;line-height:1.6;color:#1f2a44}
+#box{display:none;background:#fff7e0;border:2px solid #f4b942;border-radius:12px;padding:16px;margin:24px 0}
+textarea{width:100%;font-size:14px;padding:8px}button{font-size:16px;padding:8px 16px;margin-top:8px;cursor:pointer}</style></head>
+<body>
+<h1>Fong Auto Uploader</h1>
+<p>A personal tool that sends videos from my own storage to my own TikTok drafts, so I can review and post them myself in the TikTok app.</p>
+<div id="box">
+  <strong>Mã code TikTok (copy dán vào n8n, dùng trong vài phút):</strong>
+  <textarea id="code" rows="3" readonly></textarea>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('code').value);this.textContent='Đã copy'">Copy</button>
+</div>
+<p><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a></p>
+<script>
+var c=new URLSearchParams(location.search).get('code');
+if(c){document.getElementById('box').style.display='block';document.getElementById('code').value=c;}
+</script>
+</body></html>
